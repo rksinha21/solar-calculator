@@ -1,0 +1,30 @@
+.mrL24{
+    margin-left: 24px;
+}
+.mrT-22{
+    margin-top: -22px;
+}
+.mrT-18{
+    margin-top: -18px;
+}
+.mrT-10{
+    margin-top: -10px;
+}
+.mrT8{
+    margin-top: 8px;
+}
+.mrB8{
+    margin-bottom: 8px;
+}
+.color{
+    background-color: #be67f0;
+}
+.row{
+    display: flex;
+    flex-wrap: nowrap;
+}
+::ng-deep{
+    .mdc-dialog__surface{
+        overflow-y: unset;
+    }
+}

@@ -1,0 +1,26 @@
+<section>
+    <article>
+        <h3 mat-dialog-title>Provide your Phone Number to continue</h3>
+        <div class="mrL24" [formGroup]='form'>
+            <div>
+                <mat-form-field appearance="outline" color="orange">
+                  <mat-label>Phone Number - +91</mat-label>
+                  <input matInput required type="text" maxlength="10" pattern="^\d+$" formControlName="phoneNo">
+                </mat-form-field>
+                <div class="mrT-18" style="color: red;" *ngIf="form.invalid && form.controls['phoneNo'].errors['pattern']">
+                    <div class="row">
+                        <mat-icon style="height: 28px; width: 34px;">error_outline</mat-icon>
+                        <div>{{'Enter only digits'}}</div>
+                    </div>
+                </div>
+                <div class="mrT-10" style="color: red;" *ngIf="!isMaxLength">
+                    <div class="row">
+                        <mat-icon style="height: 28px; width: 34px;">error_outline</mat-icon>
+                        <div>{{'Enter 10 digits'}}</div>
+                    </div>
+                </div>
+            </div>
+            <button class="color mrB8" [ngClass]="form.invalid?'mrT8':''" mat-button (click)="submit()">Submit</button>
+        </div>
+    </article>
+</section>

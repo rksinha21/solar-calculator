@@ -1,0 +1,78 @@
+.form{
+    width: 420px;
+    height: 210px;
+}
+.error{
+    width: 420px;
+    height: 245px;
+}
+.resultsDisplay{
+    width: 420px;
+    height: 245px;
+}
+.col{
+    display: flex;
+    flex-direction: column;
+}
+.details{
+    justify-content: center;
+    display: flex;
+    margin-top: 100px;
+}
+.result{
+    justify-content: center;
+    display: flex;
+    margin-top: 50px;
+}
+.mrT10{
+    margin-top: 10px;
+}
+.mrT5{
+    margin-top: 5px;
+}
+.mrT20{
+    margin-top: 20px;
+}
+.mrT25{
+    margin-top:25px;
+}
+.mrT8{
+    margin-top: 8px;
+}
+.mrT30{
+    margin-top: 30px;
+}
+.mrT-15{
+    margin-top: -15px;
+}
+.mrT-18{
+    margin-top: -18px;
+}
+.pdB5{
+    padding-bottom: 5px;
+}
+.pull-right{
+    float: right;
+}
+.contentInput{
+    width: 125px;
+    border-radius: 3px;
+}
+#primaryButton{
+    background-color: orange;
+    margin-right: 10px;
+}
+#secondaryButton{
+    background-color: antiquewhite;
+}
+.validation{
+    font-size: 0.8em;
+    margin-right: -125px;
+    margin-top: 25px;
+    color: red;
+}
+.validation1{
+    font-size: 0.8em;
+    margin-right: -125px;
+    color: red;
+}

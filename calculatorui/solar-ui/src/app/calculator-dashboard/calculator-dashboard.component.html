@@ -1,0 +1,55 @@
+<section >
+    <article class="details">
+        <mat-card [ngClass]="isMonthlyBillRequired?'error':'form'">
+            <mat-card-header>
+                <div class="col">
+                    <h1>Solar Calculator</h1>
+                    <h5 class="mrT-15">Please provide your details</h5>
+                </div>
+            </mat-card-header>
+            <mat-card-content>
+                <form name="detailsForm" [formGroup]="form">
+                    <div>
+                        <label>Average Monthly Bill</label>
+                        <input required class="pull-right contentInput" type="number" id="bill" name="bill" min="0" formControlName="monthlyBill"/>
+                        <span *ngIf="isMonthlyBillRequired" class="pull-right validation">
+                            {{'Monthly Bill value is required'}}
+                        </span>
+                    </div>
+                    <div class="mrT10">
+                        <label [ngClass]="isMonthlyBillRequired?'mrT25':''">Rooftop Area Available(m<sup>2</sup>)</label>
+                        <input [ngClass]="isMonthlyBillRequired?'mrT-18':''" required class="pull-right mtT5 contentInput" type="number" id="area" name="area" min="0" formControlName="roofArea"/>
+                        <span *ngIf="isRoofAreaRequired" class="pull-right validation1" [ngClass]="isMonthlyBillRequired?'mrT5':'mrT25'">
+                           {{'Roof Area value is required'}}
+                        </span>
+                    </div>
+                </form>
+				<mat-divider [ngClass]="isRoofAreaRequired?'mrT30':'mrT20'" style="border-color: #bf7322;"></mat-divider>
+			</mat-card-content>
+			<mat-card-actions>
+			  <button mat-button id="primaryButton" (click)="calculate()">Calculate</button>
+              <button mat-button id="secondaryButton" (click)="resetForm()">Reset</button>
+			</mat-card-actions>
+        </mat-card>
+    </article>
+    <article class="result">
+        <div *ngIf="isSuccess">
+            <mat-card class="resultsDisplay">
+                <mat-card-header>
+                    <h2>Your calculated results</h2>
+                </mat-card-header>
+                <mat-card-content>
+                    <div class="pdB5">Number of panels needed: {{calculatedValues.panels}}</div>
+                    <mat-divider class="mrT8" style="border-color: #bf7322;"></mat-divider>
+                    <div class="pdB5">Required Area for Rooftop Solar: {{calculatedValues.requiredArea}}(m<sup>2</sup>)</div>
+                    <mat-divider class="mrT8" style="border-color: #bf7322;"></mat-divider>
+                    <div class="pdB5">Capital needed: {{calculatedValues.capital | currency:'INR':'symbol':'1.0-0':'en-IN'}}</div>
+                    <mat-divider class="mrT8" style="border-color: #bf7322;"></mat-divider>
+                    <div class="pdB5">Breakeven years: {{calculatedValues.breakEvenYears}} years</div>
+                    <mat-divider class="mrT8" style="border-color: #bf7322;"></mat-divider>
+                    <div>Next 25 Years earnings because of solar: {{calculatedValues.earnings | currency: 'INR':'symbol':'1.0-0':'en-IN'}}</div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </article>
+</section>
